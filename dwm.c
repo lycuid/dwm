@@ -1055,6 +1055,11 @@ manage(Window w, XWindowAttributes *wa)
   XSetWindowBorder(dpy, w, scheme[SchemeNorm][ColBorder].pixel);
   configure(c); /* propagates border_width, if size doesn't change */
   updatewindowtype(c);
+
+  /* floating alwasys centered */
+  c->x = c->mon->mx + (c->mon->mw - WIDTH(c)) / 2;
+  c->y = c->mon->my + (c->mon->mh - HEIGHT(c)) / 2;
+
   updatesizehints(c);
   updatewmhints(c);
   XSelectInput(dpy, w, EnterWindowMask|FocusChangeMask|PropertyChangeMask|StructureNotifyMask);
