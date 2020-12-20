@@ -13,13 +13,14 @@ static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_teal[]        = "#00ffff";
 static const char col_amethyst[]    = "#9b59b6";
-static const char col_hl_tags[]     = "#2f3640";
 static const char *colors[][3]      = {
-	/*                   fg         bg         border   */
-	[SchemeNorm]    = { col_gray3, col_gray1,   col_gray2 },
-	[SchemeSel]     = { col_gray4, col_gray2,   col_amethyst },
-	[SchemeTagNorm] = { col_gray4, col_gray1,   col_gray2 },
-	[SchemeTagSel]  = { col_gray4, col_hl_tags, col_gray4 },
+	/*                          fg         bg         border   */
+	[SchemeNorm]        = { col_gray3, col_gray1, col_gray2 },
+	[SchemeSel]         = { col_gray4, col_gray2, col_amethyst },
+	[SchemeTagNorm]     = { col_gray2, col_gray1, col_gray2 },
+	[SchemeTagSel]      = { col_gray4, col_gray2, col_gray4 },
+	[SchemeTagOccNorm]  = { col_gray4, col_gray1, col_gray2 },
+	[SchemeTagOccSel]   = { col_gray4, col_gray2, col_gray4 },
 };
 
 /* tagging */
