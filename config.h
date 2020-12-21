@@ -32,10 +32,15 @@ static const Rule rules[] = {
 		*	WM_CLASS(STRING) = instance, class
 		*	WM_NAME(STRING) = title
 		*/
-	/* class          instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",           NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",        NULL,       NULL,       1 << 2,       0,           -1 },
-	{ "Brave-browser",  NULL,       NULL,       1 << 2,       0,           -1 },
+	/* class          instance        title           tags mask  isfloating  monitor  scratchkey */
+	{ "Gimp",           NULL,       NULL,                 0,          1,        -1,       0 },
+	{ "Firefox",        NULL,       NULL,               1 << 2,       0,        -1,       0 },
+	{ "Brave-browser",  NULL,       NULL,               1 << 2,       0,        -1,       0 },
+
+	/* make scratchpads floating. */
+	{ NULL,             NULL,       "scratchpad-term",    0,          1,        -1,       't' },
+	{ NULL,             NULL,       "scratchpad-fm",      0,          1,        -1,       'f' },
+	{ NULL,             NULL,       "scratchpad-nm",      0,          1,        -1,       'n' },
 };
 
 /* layout(s) */
@@ -64,9 +69,18 @@ static const Layout layouts[] = {
 /* commands */
 static const char *termcmd[]  = { "st", NULL };
 
+/*First arg only serves to match against key in rules*/
+static const char *scratchpad_term[]  = {"t", "st", "-t", "scratchpad-term", NULL};
+static const char *scratchpad_fm[]    = {"f", "st", "-t", "scratchpad-fm", "-e", "vifm", NULL};
+static const char *scratchpad_nm[]    = {"n", "st", "-t", "scratchpad-nm", "-e", "nmtui", NULL};
+
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ControlMask,           XK_Return, togglescratch,  {.v = scratchpad_term } },
+	{ MODKEY|ControlMask,           XK_f,      togglescratch,  {.v = scratchpad_fm } },
+	{ MODKEY|ControlMask,           XK_n,      togglescratch,  {.v = scratchpad_nm } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
