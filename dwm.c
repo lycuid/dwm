@@ -60,7 +60,7 @@
 /* enums */
 enum { CurNormal, CurResize, CurMove, CurLast }; /* cursor */
 enum { SchemeNorm, SchemeSel, SchemeTagNorm, SchemeTagSel,
-      SchemeTagOccNorm, SchemeTagOccSel }; /* color schemes */
+      SchemeTagOccNorm, SchemeTagOccSel, SchemeLayoutSymbol }; /* color schemes */
 enum { NetSupported, NetWMName, NetWMState, NetWMCheck,
        NetWMFullscreen, NetActiveWindow, NetWMWindowType,
        NetWMWindowTypeDialog, NetClientList, NetLast }; /* EWMH atoms */
@@ -727,19 +727,20 @@ drawbar(Monitor *m)
     drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
 
     drw_setscheme(drw, scheme[sel ? SchemeTagSel : SchemeTagNorm]);
-    drw_rect(drw, x + boxs, drw->fonts->h + 2, w - (2 * boxs), 2, 1, !sel);
+    drw_rect(drw, x + boxs + 2, drw->fonts->h + 2, w - (2 * (boxs + 2)), 2, 1, !sel);
     x += w;
   }
   w = blw = TEXTW(m->ltsymbol);
-  drw_setscheme(drw, scheme[SchemeNorm]);
-  x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
+  drw_setscheme(drw, scheme[SchemeLayoutSymbol]);
+  drw_rect(drw, x, 0, 5, drw->fonts->h + 4, 1, 0);
+  x = drw_text(drw, x + 5, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
 
   if ((w = m->ww - tw - x) > bh) {
     if (m->sel) {
       drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
       drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
       if (m->sel->isfloating)
-        drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
+        drw_rect(drw, x + boxs + 2, boxs, boxw, boxw, m->sel->isfixed, 0);
     } else {
       drw_setscheme(drw, scheme[SchemeNorm]);
       drw_rect(drw, x, 0, w, bh, 1, 1);

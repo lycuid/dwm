@@ -15,12 +15,13 @@ static const char col_teal[]        = "#00ffff";
 static const char col_amethyst[]    = "#9b59b6";
 static const char *colors[][3]      = {
 	/*                          fg         bg         border   */
-	[SchemeNorm]        = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]         = { col_gray4, col_gray2, col_amethyst },
-	[SchemeTagNorm]     = { col_gray2, col_gray1, col_gray2 },
-	[SchemeTagSel]      = { col_gray4, col_gray2, col_gray4 },
-	[SchemeTagOccNorm]  = { col_gray4, col_gray1, col_gray2 },
-	[SchemeTagOccSel]   = { col_gray4, col_gray2, col_gray4 },
+	[SchemeNorm]          = { col_gray3, col_gray1,     col_gray2 },
+	[SchemeSel]           = { col_gray4, col_gray2,     col_amethyst },
+	[SchemeTagNorm]       = { col_gray2, col_gray1,     col_gray2 },
+	[SchemeTagSel]        = { col_gray4, col_gray2,     col_gray4 },
+	[SchemeTagOccNorm]    = { col_gray4, col_gray1,     col_gray2 },
+	[SchemeTagOccSel]     = { col_gray4, col_gray2,     col_gray4 },
+	[SchemeLayoutSymbol]  = { col_gray1, col_amethyst,  col_gray4 },
 };
 
 /* tagging */
