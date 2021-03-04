@@ -1,12 +1,11 @@
 /* See LICENSE file for copyright and license details. */
 
-/* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+/* appearance */ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const int bar_height         = 22;
-static const char *fonts[]          = { "IBM Plex Mono:size=10" };
+static const char *fonts[]          = { "Fira Code:size=10" };
 static const char col_gray1[]       = "#131313";
 static const char col_gray2[]       = "#353535";
 static const char col_gray3[]       = "#bbbbbb";
@@ -63,16 +62,13 @@ static const Layout layouts[] = {
 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
-/* helper for spawning shell commands in the pre dwm-5.0 fashion */
-#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
-
 /* commands */
 static const char *termcmd[]  = { "st", NULL };
 
-/*First arg only serves to match against key in rules*/
-static const char *scratchpad_term[]  = {"t", "st", "-t", "scratchpad-term", NULL};
-static const char *scratchpad_fm[]    = {"f", "st", "-t", "scratchpad-fm", "-e", "vifm", NULL};
-static const char *scratchpad_nm[]    = {"n", "st", "-t", "scratchpad-nm", "-e", "nmtui", NULL};
+/* First arg only serves to match against key in rules */
+static const char *scratchpad_term[]  = {"t", "st", "-t", "scratchpad-term", "-g", "110x30", NULL};
+static const char *scratchpad_fm[]    = {"f", "st", "-t", "scratchpad-fm", "-g", "110x30", "-e", "vifm", NULL};
+static const char *scratchpad_nm[]    = {"n", "st", "-t", "scratchpad-nm", "-g", "110x30", "-e", "nmtui", NULL};
 
 
 static Key keys[] = {
