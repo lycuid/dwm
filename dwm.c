@@ -1286,6 +1286,16 @@ recttomon(int x, int y, int w, int h)
 void
 resize(Client *c, int x, int y, int w, int h, int interact)
 {
+  // hide borders on `monocle` layout.
+  if (&monocle == c->mon->lt[c->mon->sellt]->arrange
+      && !c->isfullscreen && !c->isfloating)
+  {
+    w += c->bw * 2;
+    h += c->bw * 2;
+    x -= 1;
+    y -= 1;
+  }
+
   if (applysizehints(c, &x, &y, &w, &h, interact))
     resizeclient(c, x, y, w, h);
 }
