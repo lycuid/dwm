@@ -1,12 +1,12 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const int bar_height         = 22;
-static const char *fonts[]          = { "monospace:size=10" };
+static const int bar_height         = 25;
+static const char *fonts[]          = { "TerminessTTF Nerd Font-12" };
 static const char col_gray1[]       = "#131313";
 static const char col_gray2[]       = "#353535";
 static const char col_gray3[]       = "#bbbbbb";

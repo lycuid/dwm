@@ -733,7 +733,7 @@ drawbar(Monitor *m)
     drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
 
     drw_setscheme(drw, scheme[sel ? SchemeTagSel : SchemeTagNorm]);
-    drw_rect(drw, x + boxs + 2, drw->fonts->h + 2, w - (2 * (boxs + 2)), 2, 1, !sel);
+    drw_rect(drw, x, bar_height - 1, w, 1, 1, !sel);
     x += w;
   }
   w = blw = TEXTW(m->ltsymbol);
@@ -1290,10 +1290,10 @@ resize(Client *c, int x, int y, int w, int h, int interact)
   if (&monocle == c->mon->lt[c->mon->sellt]->arrange
       && !c->isfullscreen && !c->isfloating)
   {
+    x -= c->bw;
+    y -= c->bw;
     w += c->bw * 2;
     h += c->bw * 2;
-    x -= 1;
-    y -= 1;
   }
 
   if (applysizehints(c, &x, &y, &w, &h, interact))
