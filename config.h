@@ -6,12 +6,12 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const int bar_height         = 25;
-static const char *fonts[]          = { "TerminessTTF Nerd Font-11" };
-static const char col_gray1[]       = "#131313";
-static const char col_gray2[]       = "#353535";
+static const char *fonts[]          = { "Hack Nerd Font-9:style=Retina" };
+static const char col_gray1[]       = "#090909";
+static const char col_gray2[]       = "#171717";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_teal[]        = "#00ffff";
+static const char col_teal[]        = "#089CAC";
 static const char col_amethyst[]    = "#9b59b6";
 static const char *colors[][3]      = {
 	/*                          fg         bg         border   */
