@@ -6,12 +6,12 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const int bar_height         = 25;
-static const char *fonts[]          = { "Hack Nerd Font-9:style=Retina" };
+static const char *fonts[]          = { "Hack Nerd Font-9" };
 static const char col_gray1[]       = "#090909";
 static const char col_gray2[]       = "#171717";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_teal[]        = "#089CAC";
+static const char col_teal[]        = "#089cac";
 static const char col_amethyst[]    = "#9b59b6";
 static const char *colors[][3]      = {
 	/*                          fg         bg         border   */
@@ -25,7 +25,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 static const int  tpadding = 3; // padding (in pixels) for tags' display on statusbar
 
 static const Rule rules[] = {
