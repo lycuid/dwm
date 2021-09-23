@@ -1,0 +1,13 @@
+Language: Cpp
+BasedOnStyle: LLVM
+AlignConsecutiveAssignments: true
+AlignConsecutiveMacros: true
+AlignConsecutiveBitFields: true
+AlignConsecutiveDeclarations: true
+AllowShortLoopsOnASingleLine: true
+AllowShortIfStatementsOnASingleLine: true
+AllowShortCaseLabelsOnASingleLine: true
+SpacesBeforeTrailingComments: 1
+ColumnLimit: 80
+BreakBeforeBraces: Linux
+IndentCaseLabels: true
